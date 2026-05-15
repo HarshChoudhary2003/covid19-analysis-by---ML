@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 3D AI Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div class="ui-layer">
+        <div class="glass-panel">
+            <h1>Global AI Analytics</h1>
+            <p class="subtitle">COVID-19 Infection Rate Predictor</p>
+            
+            <div class="input-group">
+                <label>GDP per capita</label>
+                <input type="range" id="gdp" min="0" max="2" step="0.01" value="1.0">
+                <span id="gdp-val">1.0</span>
+            </div>
+            
+            <div class="input-group">
+                <label>Social Support</label>
+                <input type="range" id="social" min="0" max="2" step="0.01" value="1.2">
+                <span id="social-val">1.2</span>
+            </div>
+            
+            <div class="input-group">
+                <label>Healthy Life Expectancy</label>
+                <input type="range" id="health" min="0" max="1.5" step="0.01" value="0.8">
+                <span id="health-val">0.8</span>
+            </div>
+            
+            <div class="input-group">
+                <label>Freedom to make life choices</label>
+                <input type="range" id="freedom" min="0" max="1" step="0.01" value="0.5">
+                <span id="freedom-val">0.5</span>
+            </div>
+            
+            <button id="predict-btn">Predict Impact</button>
+            
+            <div class="result-box">
+                <h3>Predicted Infection Rate</h3>
+                <div class="result-value" id="result">--</div>
+            </div>
+        </div>
+
+        <div class="data-panel glass-panel">
+            <h2>Dataset Insights</h2>
+            <div id="stats-container" class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-title">Countries</div>
+                    <div class="stat-value" id="count-countries">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Avg GDP</div>
+                    <div class="stat-value" id="avg-gdp">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Avg Health</div>
+                    <div class="stat-value" id="avg-health">--</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">Avg Infection</div>
+                    <div class="stat-value" id="avg-infection">--</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
